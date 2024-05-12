@@ -1,16 +1,5 @@
 # new_york_times
 
-A new Flutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![WhatsApp Image 2024-05-12 at 7 12 13 PM](https://github.com/ShaimaaFakhraldin/new_york_times/assets/85239612/c304a65b-4520-469b-a79f-e08ddff0fd32)
+![WhatsApp Image 2024-05-12 at 7 12 13 PM (1)](https://github.com/ShaimaaFakhraldin/new_york_times/assets/85239612/8ca2cb39-704b-472e-aa9c-ac7a23dc9bd7)
