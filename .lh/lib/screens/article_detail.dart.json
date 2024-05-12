@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/screens/article_detail.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1715359859338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1715359859338,
+            "name": "Commit-0",
+            "content": "import 'package:cached_network_image/cached_network_image.dart';\nimport 'package:flutter/cupertino.dart';\nimport 'package:flutter/material.dart';\nimport 'package:shimmer/shimmer.dart';\n\nimport '../data/constants.dart';\nimport '../models/article.dart';\nimport '../widgets/article_appbar.dart';\n\nclass ArticleDetail extends StatefulWidget {\n  const ArticleDetail(this._article, {Key? key}) : super(key: key);\n  final Article _article;\n  static const String routeKey = '/ArticleDetail';\n\n  @override\n  State<ArticleDetail> createState() => _ArticleDetailState();\n}\n\nclass _ArticleDetailState extends State<ArticleDetail> {\n  @override\n  Widget build(BuildContext context) {\n    String? imageUrl = Constants.defaultImage;\n    if (widget._article.media!.isNotEmpty &&\n        widget._article.media!.first.mediaMetadata!.isNotEmpty &&\n        widget._article.media!.first.mediaMetadata!.length > 2) {\n      imageUrl = widget._article.media!.first.mediaMetadata![2].url;\n    }\n\n    return Scaffold(\n      appBar:\n          ArticleAppbar(context).createBaseAppbar(\"${widget._article!.title}\"),\n      body: Column(\n        children: [\n          CachedNetworkImage(\n            imageUrl: imageUrl!,\n            fit: BoxFit.contain,\n            placeholder: (context, url) => Shimmer.fromColors(\n              baseColor: Colors.grey[400]!,\n              highlightColor: Colors.grey[100]!,\n              child: Container(\n                decoration: const BoxDecoration(\n                  color: Colors.white,\n                  borderRadius: BorderRadius.only(\n                    bottomRight: Radius.circular(50.0),\n                    bottomLeft: Radius.circular(50.0),\n                    topLeft: Radius.circular(50.0),\n                    topRight: Radius.circular(50.0),\n                  ),\n                ),\n              ),\n            ),\n            errorWidget: (context, url, error) => Icon(\n              Icons.error,\n            ),\n          ),\n          Padding(\n            padding: const EdgeInsets.all(8.0),\n            child: Text(\n              \"${widget._article.articlesListAbstract}\",\n              style: Theme.of(context).textTheme.headline5,\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}\n"
+        }
+    ]
+}
